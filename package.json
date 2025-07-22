@@ -1,11 +1,54 @@
 {
   "name": "shadcn-mcp-server",
-  "module": "index.ts",
+  "version": "1.0.0",
+  "description": "MCP Server for shadcn/ui components",
   "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
+  "main": "./dist/index.js",
+  "bin": {
+    "shadcn-mcp": "./dist/index.js"
   },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "dev": "tsx watch index.ts",
+    "build": "tsc && chmod +x dist/index.js",
+    "clean": "rm -rf dist",
+    "start": "node dist/index.js",
+    "test:mcp": "node scripts/test-mcp.js",
+    "test:manual": "pnpm run build && node dist/index.js",
+    "prepublishOnly": "pnpm run clean && pnpm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "shadcn",
+    "shadcn-ui",
+    "components",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@types/node": "^24.0.15",
+    "@types/uuid": "^10.0.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4",
+    "@vitest/coverage-v8": "^3.2.4"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.16.0",
+    "axios": "^1.10.0",
+    "cheerio": "^1.1.2",
+    "commander": "^14.0.0",
+    "dotenv": "^17.2.0",
+    "winston": "^3.17.0",
+    "zod": "^4.0.5"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }
