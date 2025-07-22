@@ -1,11 +1,11 @@
 import axios, { type AxiosInstance } from "axios";
-import { logger } from "../utils/logger";
+import { logger } from "../utils/logger.js";
 import {
   type ComponentData,
   type BlockData,
   type ComponentSummary,
   type BlockSummary,
-} from "../types/shadcn";
+} from "../types/shadcn.js";
 
 export class ShadcnService {
   private client: AxiosInstance;

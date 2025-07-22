@@ -8,8 +8,8 @@ import {
 } from "@modelcontextprotocol/sdk/types.js";
 import { program } from "commander";
 import dotenv from "dotenv";
-import { ShadcnService } from "./services/shadcn-service";
-import { logger } from "./utils/logger";
+import { ShadcnService } from "./services/shadcn-service.js";
+import { logger } from "./utils/logger.js";
 import { z } from "zod";
 
 // Load environment variables

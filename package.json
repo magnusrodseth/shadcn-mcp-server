@@ -21,6 +21,7 @@
     "start": "node dist/index.js",
     "test:mcp": "node scripts/test-mcp.js",
     "test:manual": "pnpm run build && node dist/index.js",
+    "test:cursor": "node scripts/test-cursor.js",
     "prepublishOnly": "pnpm run clean && pnpm run build"
   },
   "keywords": [
