@@ -1,5 +1,5 @@
 {
-  "name": "shadcn-mcp-server",
+  "name": "@magnusrodseth/shadcn-mcp-server",
   "version": "1.0.0",
   "description": "MCP Server for shadcn/ui components",
   "type": "module",
@@ -22,7 +22,8 @@
     "test:mcp": "node scripts/test-mcp.js",
     "test:manual": "pnpm run build && node dist/index.js",
     "test:cursor": "node scripts/test-cursor.js",
-    "prepublishOnly": "pnpm run clean && pnpm run build"
+    "prepublishOnly": "pnpm run clean && pnpm run build",
+    "package:publish": "pnpm run build && pnpm publish --access public"
   },
   "keywords": [
     "mcp",

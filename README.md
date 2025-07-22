@@ -1,6 +1,35 @@
-# Shadcn MCP Server
+# shadcn/ui MCP Server
+
+[![npm version](https://badge.fury.io/js/@magnusrodseth%2Fshadcn-mcp-server.svg)](https://badge.fury.io/js/@magnusrodseth%2Fshadcn-mcp-server)
+[![npm downloads](https://img.shields.io/npm/dm/@magnusrodseth/shadcn-mcp-server.svg)](https://www.npmjs.com/package/@magnusrodseth/shadcn-mcp-server)
+[![npm](https://img.shields.io/npm/v/@magnusrodseth/shadcn-mcp-server.svg)](https://www.npmjs.com/package/@magnusrodseth/shadcn-mcp-server)
 
 A Model Context Protocol (MCP) server that provides AI assistants with direct access to shadcn/ui components and blocks. This server enables AI assistants like Claude (via Cursor) to fetch real-time component source code, documentation, and implementation examples.
+
+## ⚡ Quick Install
+
+Get started instantly without any setup:
+
+```bash
+# Run directly with npx (no installation required)
+npx @magnusrodseth/shadcn-mcp-server
+
+# Or install globally
+npm install -g @magnusrodseth/shadcn-mcp-server
+```
+
+Then add to your Cursor configuration:
+
+```json
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": ["@magnusrodseth/shadcn-mcp-server"]
+    }
+  }
+}
+```
 
 ## 🎯 What is this?
 
@@ -214,29 +243,63 @@ NODE_ENV=development
 
 ## 📦 Deployment Options
 
-### Option 1: Local Development (Recommended)
+### Option 1: NPX (Recommended) 🌟
 
-Perfect for personal use and development:
+**No installation required** - always uses the latest version:
 
 ```bash
-pnpm run build
-# Use the path in Cursor config: /path/to/dist/index.js
+# No setup needed, just add to Cursor config:
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": ["@magnusrodseth/shadcn-mcp-server"],
+      "env": {
+        "GITHUB_TOKEN": "your_token_here"
+      }
+    }
+  }
+}
 ```
+
+**Benefits:**
+
+- ✅ Always up-to-date
+- ✅ No global installation
+- ✅ Works immediately
+- ✅ No build step required
 
 ### Option 2: Global npm Installation
 
 ```bash
-# Publish your fork (update package.json first)
-npm publish --access public
+# Install once, use everywhere
+npm install -g @magnusrodseth/shadcn-mcp-server
 
-# Install globally
-npm install -g @yourusername/shadcn-mcp-server
-
-# Use in Cursor
-"command": "shadcn-mcp-server"
+# Use in Cursor config:
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "@magnusrodseth/shadcn-mcp-server"
+    }
+  }
+}
 ```
 
-### Option 3: Direct Git Installation
+### Option 3: Local Development
+
+Perfect for contributing or customization:
+
+```bash
+git clone https://github.com/yourusername/shadcn-mcp-server.git
+cd shadcn-mcp-server
+pnpm install && pnpm run build
+
+# Use absolute path in Cursor config:
+"command": "node",
+"args": ["/path/to/shadcn-mcp-server/dist/index.js"]
+```
+
+### Option 4: Direct Git Installation
 
 ```bash
 npm install -g git+https://github.com/yourusername/shadcn-mcp-server.git
