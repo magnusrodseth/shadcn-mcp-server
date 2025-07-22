@@ -62,7 +62,7 @@ sequenceDiagram
     Note over MCP: Available Tools:<br/>• list_components<br/>• get_component<br/>• list_blocks<br/>• get_block
 ```
 
-## 🚀 Quick Start
+## 🚀 Getting Started with Developing
 
 ### Prerequisites
 
@@ -389,17 +389,6 @@ Or set in your Cursor configuration:
 6. **Commit** your changes (`git commit -m 'Add amazing feature'`)
 7. **Push** to the branch (`git push origin feature/amazing-feature`)
 8. **Open** a Pull Request
-
-### Development Guidelines
-
-- Follow TypeScript best practices
-- Add tests for new functionality
-- Update documentation for API changes
-- Ensure all tests pass before submitting
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 

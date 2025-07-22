@@ -23,7 +23,7 @@
     "test:manual": "pnpm run build && node dist/index.js",
     "test:cursor": "node scripts/test-cursor.js",
     "prepublishOnly": "pnpm run clean && pnpm run build",
-    "package:publish": "pnpm run build && pnpm publish --access public"
+    "package:publish": "pnpm publish --access public"
   },
   "keywords": [
     "mcp",
