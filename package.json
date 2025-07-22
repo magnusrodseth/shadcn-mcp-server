@@ -1,6 +1,6 @@
 {
   "name": "@magnusrodseth/shadcn-mcp-server",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "MCP Server for shadcn/ui components",
   "type": "module",
   "main": "./dist/index.js",
@@ -22,8 +22,12 @@
     "test:mcp": "node scripts/test-mcp.js",
     "test:manual": "pnpm run build && node dist/index.js",
     "test:cursor": "node scripts/test-cursor.js",
+    "version:bump": "tsx scripts/version-bump.ts",
+    "version:patch": "tsx scripts/version-bump.ts --type patch",
+    "version:minor": "tsx scripts/version-bump.ts --type minor",
+    "version:major": "tsx scripts/version-bump.ts --type major",
     "prepublishOnly": "pnpm run clean && pnpm run build",
-    "package:publish": "pnpm publish --access public"
+    "package:publish": "pnpm run version:bump && pnpm publish --access public"
   },
   "keywords": [
     "mcp",

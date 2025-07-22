@@ -19,7 +19,7 @@ dotenv.config();
 program
   .name("shadcn-mcp")
   .description("MCP Server for shadcn/ui components")
-  .version("1.0.0")
+  .version("1.1.0")
   .option("-g, --github-token <token>", "GitHub Personal Access Token")
   .option("-d, --debug", "Enable debug logging")
   .parse();
@@ -46,7 +46,7 @@ const shadcnService = new ShadcnService(githubToken);
 const server = new Server(
   {
     name: "shadcn-mcp-server",
-    version: "1.0.0",
+    version: "1.1.0",
   },
   {
     capabilities: {
