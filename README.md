@@ -31,6 +31,10 @@ Then add to your Cursor configuration:
 }
 ```
 
+Next, restart the MCP tool and your Cursor settings should look something like this:
+
+![Cursor Preview](/static/cursor-preview.png)
+
 ## 🎯 What is this?
 
 The **Shadcn MCP Server** bridges the gap between AI assistants and the shadcn/ui component library. Instead of relying on potentially outdated training data, AI assistants can now fetch the latest component implementations directly from the shadcn/ui repository.
