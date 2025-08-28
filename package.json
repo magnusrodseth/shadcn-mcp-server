@@ -2,6 +2,11 @@
   "name": "@magnusrodseth/shadcn-mcp-server",
   "version": "1.1.2",
   "description": "MCP Server for shadcn/ui components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magnusrodseth/shadcn-mcp-server.git"
+  },
+  "homepage": "https://github.com/magnusrodseth/shadcn-mcp-server",
   "type": "module",
   "main": "./dist/index.js",
   "bin": {
